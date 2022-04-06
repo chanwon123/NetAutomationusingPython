@@ -42,10 +42,15 @@ def history(account):
         history_list.append((date, cmd))
     return history_list
 
+datetime.today()
+datetime.now()
+
+now = datetime.now()
+
 if __name__ == '__main__':
     accouts= get_accounts()
     
-    file = open('report.txt', "w")
+    file = open('report_%s년%s월%s일.txt' %(now.year , now.month , now.day) , "w")
     for account in accouts:        
         print("계정 : ", account)
         file.write("계정 : {0}".format(account))
@@ -64,4 +69,4 @@ if __name__ == '__main__':
             # file.write("-"* 70)
             # file.write("\n")
     file.close()
-            
+          
